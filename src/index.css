@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-brown-100 text-brown-700;
+    }
+
+    body, input, textarea, button {
+        @apply font-roboto font-normal text-base;
+    }
+
+    :focus {
+        @apply outline-none;
+        box-shadow: 0 0 0 2px theme(colors.purple.500);
+    }
+}
