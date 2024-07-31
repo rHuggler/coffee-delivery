@@ -1,7 +1,9 @@
+import coffeeLogo from "../assets/coffee-logo.svg";
+
 export function Header() {
 	return (
 		<header>
-			<span>Header</span>
+			<img src={coffeeLogo} alt="Coffee delivery logo" />
 		</header>
 	);
 }
