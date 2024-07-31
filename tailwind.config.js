@@ -32,6 +32,9 @@ export default {
       fontFamily: {
         title: ['Baloo 2', 'sans'],
         roboto: ['Roboto', 'sans']
+      },
+      spacing: {
+        '8xl': '90rem'
       }
     },
   },
