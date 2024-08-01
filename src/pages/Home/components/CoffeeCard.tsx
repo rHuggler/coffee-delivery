@@ -1,16 +1,32 @@
 import { ShoppingCart } from "@phosphor-icons/react";
 
-export function CoffeeCard() {
+interface CoffeeCardProps {
+	imageUrl: string;
+	name: string;
+	description: string;
+	price: number;
+	tags: string[];
+}
+
+export function CoffeeCard({
+	imageUrl,
+	name,
+	description,
+	price,
+	tags,
+}: CoffeeCardProps) {
 	return (
 		<div>
-			<img src="https://placehold.co/120x120" alt="" />
+			<img src={imageUrl} alt="" />
 			<header>
-				<p>Classic</p>
+				{tags.map((t) => (
+					<p key={t}>{t}</p>
+				))}
 			</header>
-			<h5>Classic Espresso</h5>
-			<p>The classic espresso made with hot water and ground beans</p>
+			<h5>{name}</h5>
+			<p>{description}</p>
 			<footer>
-				<p>R$ 9,90</p>
+				<p>R$ {price}</p>
 				<input type="number" name="" id="" />
 				<div>
 					<ShoppingCart size={24} weight="fill" />
