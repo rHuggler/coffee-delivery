@@ -1,4 +1,4 @@
-import { ShoppingCart } from "@phosphor-icons/react";
+import { Minus, Plus, ShoppingCart } from "@phosphor-icons/react";
 
 interface CoffeeCardProps {
 	imageUrl: string;
@@ -16,20 +16,50 @@ export function CoffeeCard({
 	tags,
 }: CoffeeCardProps) {
 	return (
-		<div>
-			<img src={imageUrl} alt="" />
-			<header>
+		<div className="w-64 h-[calc(20rem-0.625rem)] bg-brown-200 flex flex-col items-stretch text-sm leading-130% rounded-tl-md rounded-br-md rounded-tr-4.5xl rounded-bl-4.5xl text-brown-700">
+			<img
+				src={`/coffees/${imageUrl}`}
+				alt=""
+				className="h-30 w-30 -mt-5 self-center"
+			/>
+			<header className="flex gap-1 self-center mt-3">
 				{tags.map((t) => (
-					<p key={t}>{t}</p>
+					<div key={t} className="rounded-full bg-yellow-300">
+						<p
+							key={t}
+							className="px-2 py-1 text-2xs leading-130% font-bold uppercase text-yellow-700"
+						>
+							{t}
+						</p>
+					</div>
 				))}
 			</header>
-			<h5>{name}</h5>
-			<p>{description}</p>
-			<footer>
-				<p>R$ {price}</p>
-				<input type="number" name="" id="" />
-				<div>
-					<ShoppingCart size={24} weight="fill" />
+			<h5 className="self-center mt-4 px-5 font-title font-bold text-xl leading-130%">
+				{name}
+			</h5>
+			<p className="self-center mt-2 px-5 text-center text-brown-600">
+				{description}
+			</p>
+			<footer className="flex items-center justify-between mt-auto mb-5 px-6">
+				<p>
+					<span>R$</span>{" "}
+					<span className="font-title font-extrabold text-2xl leading-130%">
+						{(price / 100).toFixed(2).replace(".", ",")}
+					</span>
+				</p>
+				<div className="flex items-center gap-2">
+					<div className="flex items-center gap-2 p-2 rounded-md bg-brown-400 text-brown-900 text-base leading-130%">
+						<button type="button" className="text-purple-500">
+							<Minus size={14} weight="bold" />
+						</button>
+						<span>1</span>
+						<button type="button" className="text-purple-500">
+							<Plus size={14} weight="bold" />
+						</button>
+					</div>
+					<div className="p-2 rounded-md bg-purple-700 text-brown-200">
+						<ShoppingCart size={24} weight="fill" />
+					</div>
 				</div>
 			</footer>
 		</div>

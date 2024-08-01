@@ -6,43 +6,48 @@ const coffeeList = [
 		description: "The classic espresso made with hot water and ground beans",
 		price: 990,
 		tags: ["Classic"],
-		imageUrl: "https://placehold.co/120x120",
+		imageUrl: "classic-espresso.png",
 	},
 	{
 		name: "American Espresso",
 		description: "A diluted espresso, less intense than the traditional",
 		price: 990,
 		tags: ["Classic"],
-		imageUrl: "https://placehold.co/120x120",
+		imageUrl: "american-espresso.png",
 	},
 	{
 		name: "Creamy Espresso",
 		description: "Traditional espresso with a creamy foam",
 		price: 990,
 		tags: ["Classic"],
-		imageUrl: "https://placehold.co/120x120",
+		imageUrl: "creamy-espresso.png",
 	},
 	{
 		name: "Cold Espresso",
 		description: "A drink made with espresso and ice cubes",
 		price: 990,
 		tags: ["Classic", "Cold"],
-		imageUrl: "https://placehold.co/120x120",
+		imageUrl: "cold-espresso.png",
 	},
 	{
 		name: "Coffee with Milk",
 		description: "Half and half of traditional espresso and steamed milk",
 		price: 990,
 		tags: ["Classic", "With Milk"],
-		imageUrl: "https://placehold.co/120x120",
+		imageUrl: "coffee-with-milk.png",
 	},
 ];
 
 export function Home() {
 	return (
-		<main>
-			<h3>Our coffees</h3>
-			<div id="coffee-list-grid">
+		<main className="mt-8">
+			<h3 className="font-title text-3.5xl leading-130% font-extrabold text-brown-800">
+				Our coffees
+			</h3>
+			<div
+				id="coffee-list-grid"
+				className="mt-13 grid grid-cols-4 gap-y-10 gap-x-8"
+			>
 				{coffeeList.map((c) => (
 					<CoffeeCard key={c.name} {...c} />
 				))}
