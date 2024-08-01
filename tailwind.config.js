@@ -34,14 +34,23 @@ export default {
         roboto: ['Roboto', 'sans']
       },
       spacing: {
+        '13': '3.375rem',
+        '23': '5.75rem',
+        '30': '7.5rem',
         '8xl': '90rem',
-        '23': '5.75rem'
       },
       lineHeight: {
         '130%': '1.3'
       },
       backgroundImage: {
-        'hero-bg': "url('/src/assets/hero-bg.svg')"
+        'hero-bg': "url('/src/assets/hero-bg.png')"
+      },
+      fontSize: {
+        '2xs': '0.625rem',
+        '3.5xl': '2rem',
+      },
+      borderRadius: {
+        '4.5xl': '2.25rem'
       }
     },
   },
