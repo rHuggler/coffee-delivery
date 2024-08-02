@@ -1,4 +1,5 @@
 import { Minus, Plus, ShoppingCart } from "@phosphor-icons/react";
+import { useState } from "react";
 
 interface CoffeeCardProps {
 	imageUrl: string;
@@ -15,6 +16,26 @@ export function CoffeeCard({
 	price,
 	tags,
 }: CoffeeCardProps) {
+	const [amount, setAmount] = useState(1);
+
+	function increaseAmount() {
+		setAmount((state) => {
+			if (state < 99) {
+				return state + 1;
+			}
+			return state;
+		});
+	}
+
+	function decreaseAmount() {
+		setAmount((state) => {
+			if (state > 1) {
+				return state - 1;
+			}
+			return state;
+		});
+	}
+
 	return (
 		<div className="w-64 h-[calc(20rem-0.625rem)] bg-brown-200 flex flex-col items-stretch text-sm leading-130% rounded-tl-md rounded-br-md rounded-tr-4.5xl rounded-bl-4.5xl text-brown-700">
 			<img
@@ -49,11 +70,19 @@ export function CoffeeCard({
 				</p>
 				<div className="flex items-center gap-2">
 					<div className="flex items-center gap-2 p-2 rounded-md bg-brown-400 text-brown-900 text-base leading-130%">
-						<button type="button" className="text-purple-500">
+						<button
+							type="button"
+							className="text-purple-500 relative px-2 py-3 -m-2"
+							onClick={decreaseAmount}
+						>
 							<Minus size={14} weight="bold" />
 						</button>
-						<span>1</span>
-						<button type="button" className="text-purple-500">
+						<span>{amount}</span>
+						<button
+							type="button"
+							className="text-purple-500 relative px-2 py-3 -m-2"
+							onClick={increaseAmount}
+						>
 							<Plus size={14} weight="bold" />
 						</button>
 					</div>
