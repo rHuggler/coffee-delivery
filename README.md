@@ -1,30 +1,16 @@
-# React + TypeScript + Vite
+# coffee-delivery
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8ed0d57f-f5ff-4cdf-9af3-0412baa6d4e0/deploy-status)](https://app.netlify.com/sites/rhuggler-coffee-delivery/deploys)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> [Preview hosted @ Netlify available here](https://coffee-delivery.huggler.dev/)
 
-Currently, two official plugins are available:
+Coffee delivery service page made with Vite + React to practice front-end skills
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features available:
+- Listing of coffees available for purchase
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Planned features:
+- Add a specific quantity of items to the cart
+- Increase or decrease the quantity of items in the cart
+- Form for the user to fill in their address
+- Display the total number of items in the cart in the header
+- Display the total value of the items in the cart multiplied by their price
