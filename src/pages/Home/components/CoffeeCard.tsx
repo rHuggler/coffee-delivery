@@ -72,7 +72,7 @@ export function CoffeeCard({
 					<div className="flex items-center gap-2 p-2 rounded-md bg-brown-400 text-brown-900 text-base leading-130%">
 						<button
 							type="button"
-							className="text-purple-500 relative px-2 py-3 -m-2"
+							className="text-purple-500 relative px-1 py-2 -m-1"
 							onClick={decreaseAmount}
 						>
 							<Minus size={14} weight="bold" />
@@ -80,7 +80,7 @@ export function CoffeeCard({
 						<span>{amount}</span>
 						<button
 							type="button"
-							className="text-purple-500 relative px-2 py-3 -m-2"
+							className="text-purple-500 relative px-1 py-2 -m-1"
 							onClick={increaseAmount}
 						>
 							<Plus size={14} weight="bold" />
