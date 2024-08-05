@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+    html {
+        scrollbar-gutter: stable;
+    }
+
     body {
         @apply bg-brown-100 text-brown-700;
     }
