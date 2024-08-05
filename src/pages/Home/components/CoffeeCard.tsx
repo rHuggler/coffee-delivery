@@ -86,7 +86,7 @@ export function CoffeeCard({
 							<Plus size={14} weight="bold" />
 						</button>
 					</div>
-					<div className="p-2 rounded-md bg-purple-700 text-brown-200">
+					<div className="p-2 rounded-md bg-purple-700 text-brown-200 cursor-pointer">
 						<ShoppingCart size={24} weight="fill" />
 					</div>
 				</div>
