@@ -35,12 +35,15 @@ export default {
       },
       spacing: {
         '13': '3.375rem',
+        '15': '3.75rem',
         '23': '5.75rem',
         '30': '7.5rem',
+        '50': '12.5rem',
         '8xl': '90rem',
       },
       lineHeight: {
-        '130%': '1.3'
+        '130%': '1.3',
+        '160%': '1.6',
       },
       backgroundImage: {
         'hero-bg': "url('/src/assets/hero-bg.png')"
@@ -50,7 +53,14 @@ export default {
         '3.5xl': '2rem',
       },
       borderRadius: {
+        'smmd': '0.25rem',
         '4.5xl': '2.25rem'
+      },
+      borderWidth: {
+        '1': '1px',
+      },
+      boxShadow: {
+        '2px': '0 0 0 2px',
       }
     },
   },
