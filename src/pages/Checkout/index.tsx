@@ -9,10 +9,16 @@ import {
 	Trash,
 } from "@phosphor-icons/react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Checkout() {
 	const [focused, setFocused] = useState(false);
 	const [amount, setAmount] = useState(1);
+	const navigate = useNavigate();
+
+	function handleConfirm() {
+		navigate("/order-confirmed");
+	}
 
 	function onFocus() {
 		setFocused(true);
@@ -256,6 +262,7 @@ export function Checkout() {
 					<button
 						type="button"
 						className="p-3 bg-yellow-500 text-white font-bold uppercase text-sm leading-160% rounded-md"
+						onClick={handleConfirm}
 					>
 						Confirm order
 					</button>
