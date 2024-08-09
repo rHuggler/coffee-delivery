@@ -41,9 +41,9 @@ const coffeeList = [
 export function Home() {
 	return (
 		<main className="mt-8">
-			<h3 className="font-title text-3.5xl leading-130% font-extrabold text-brown-800">
+			<h1 className="font-title text-3.5xl leading-130% font-extrabold text-brown-800">
 				Our coffees
-			</h3>
+			</h1>
 			<div
 				id="coffee-list-grid"
 				className="mt-13 grid grid-cols-4 gap-y-10 gap-x-8"
