@@ -3,12 +3,16 @@ import {
 	CreditCard,
 	CurrencyDollar,
 	MapPinLine,
+	Minus,
 	Money,
+	Plus,
+	Trash,
 } from "@phosphor-icons/react";
 import { useState } from "react";
 
 export function Checkout() {
 	const [focused, setFocused] = useState(false);
+	const [amount, setAmount] = useState(1);
 
 	function onFocus() {
 		setFocused(true);
@@ -18,9 +22,27 @@ export function Checkout() {
 		setFocused(false);
 	}
 
+	function increaseAmount() {
+		setAmount((state) => {
+			if (state < 99) {
+				return state + 1;
+			}
+			return state;
+		});
+	}
+
+	function decreaseAmount() {
+		setAmount((state) => {
+			if (state > 1) {
+				return state - 1;
+			}
+			return state;
+		});
+	}
+
 	return (
 		<main className="flex mt-10 gap-8">
-			<section>
+			<section className="grow-[7]">
 				<h5 className="text-brown-800 font-title font-bold text-lg leading-130%">
 					Complete your order
 				</h5>
@@ -120,20 +142,124 @@ export function Checkout() {
 					</section>
 				</form>
 			</section>
-			<section>
+			<section className="grow">
 				<h5 className="text-brown-800 font-title font-bold text-lg leading-130%">
 					Selected Coffees
 				</h5>
-				<div className="mt-4">
-					<p>CoffeeMiniCard</p>
-					<p>CoffeeMiniCard</p>
-				</div>
-				<div>
-					<p>Items total</p>
-					<p>Delivery</p>
-					<p>Total</p>
-					<button type="button">Confirm order</button>
-				</div>
+				<section className="flex flex-col mt-4 gap-6 p-10 bg-brown-200 rounded-md rounded-tr-5.5xl rounded-bl-5.5xl">
+					<div className="flex">
+						<div className="flex pl-1 py-2 gap-5">
+							<img
+								src="/coffees/classic-espresso.png"
+								alt=""
+								className="size-16"
+							/>
+							<div className="flex flex-col gap-2">
+								<p className="text-base leading-130% text-brown-800">
+									Classic Espresso
+								</p>
+								<div className="flex gap-2">
+									<div className="flex items-center gap-2 p-2 rounded-md bg-brown-400 text-brown-900 text-base leading-130%">
+										<button
+											type="button"
+											className="text-purple-500 relative px-1 py-2 -m-1"
+											onClick={decreaseAmount}
+										>
+											<Minus size={14} weight="bold" />
+										</button>
+										<span className="text-brown-900">{amount}</span>
+										<button
+											type="button"
+											className="text-purple-500 relative px-1 py-2 -m-1"
+											onClick={increaseAmount}
+										>
+											<Plus size={14} weight="bold" />
+										</button>
+									</div>
+									<div className="flex items-center gap-1 p-2 rounded-md bg-brown-400 text-brown-900 text-base leading-130%">
+										<button
+											type="button"
+											className="text-purple-500"
+											onClick={decreaseAmount}
+										>
+											<Trash size={16} />
+										</button>
+										<span className="uppercase text-xs leading-160% text-brown-700">
+											Remove
+										</span>
+									</div>
+								</div>
+							</div>
+							<p className="text-brown-700 text-base leading-130% font-bold pl-12 text-nowrap">
+								$ 9.90
+							</p>
+						</div>
+					</div>
+					<div className="border-b-1 border-brown-400" />
+					<div className="flex">
+						<div className="flex pl-1 py-2 gap-5">
+							<img src="/coffees/latte.png" alt="" className="size-16" />
+							<div className="flex flex-col gap-2">
+								<p className="text-base leading-130% text-brown-800">Latte</p>
+								<div className="flex gap-2">
+									<div className="flex items-center gap-2 p-2 rounded-md bg-brown-400 text-brown-900 text-base leading-130%">
+										<button
+											type="button"
+											className="text-purple-500 relative px-1 py-2 -m-1"
+											onClick={decreaseAmount}
+										>
+											<Minus size={14} weight="bold" />
+										</button>
+										<span className="text-brown-900">{amount}</span>
+										<button
+											type="button"
+											className="text-purple-500 relative px-1 py-2 -m-1"
+											onClick={increaseAmount}
+										>
+											<Plus size={14} weight="bold" />
+										</button>
+									</div>
+									<div className="flex items-center gap-1 p-2 rounded-md bg-brown-400 text-brown-900 text-base leading-130%">
+										<button
+											type="button"
+											className="text-purple-500"
+											onClick={decreaseAmount}
+										>
+											<Trash size={16} />
+										</button>
+										<span className="uppercase text-xs leading-160% text-brown-700">
+											Remove
+										</span>
+									</div>
+								</div>
+							</div>
+							<p className="text-brown-700 text-base leading-130% font-bold pl-12">
+								$ 9.90
+							</p>
+						</div>
+					</div>
+					<div className="border-b-1 border-brown-400" />
+					<div className="flex flex-col gap-4">
+						<div className="flex justify-between text-sm leading-130%">
+							<p>Items total</p>
+							<p>$ 29,70</p>
+						</div>
+						<div className="flex justify-between text-sm leading-130%">
+							<p>Delivery</p>
+							<p>$ 3,50</p>
+						</div>
+						<div className="flex justify-between font-bold text-xl leading-130%">
+							<p>Total</p>
+							<p>$ 33,20</p>
+						</div>
+					</div>
+					<button
+						type="button"
+						className="p-3 bg-yellow-500 text-white font-bold uppercase text-sm leading-160% rounded-md"
+					>
+						Confirm order
+					</button>
+				</section>
 			</section>
 		</main>
 	);

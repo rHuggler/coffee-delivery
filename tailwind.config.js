@@ -54,7 +54,8 @@ export default {
       },
       borderRadius: {
         'smmd': '0.25rem',
-        '4.5xl': '2.25rem'
+        '4.5xl': '2.25rem',
+        '5.5xl': '2.75rem',
       },
       borderWidth: {
         '1': '1px',
