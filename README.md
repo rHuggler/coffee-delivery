@@ -7,10 +7,10 @@ Coffee delivery service page made with Vite + React to practice front-end skills
 
 Features available:
 - Listing of coffees available for purchase
+- Form for the user to fill in their address
 
 Planned features:
 - Add a specific quantity of items to the cart
 - Increase or decrease the quantity of items in the cart
-- Form for the user to fill in their address
 - Display the total number of items in the cart in the header
 - Display the total value of the items in the cart multiplied by their price
